@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user_sessions/new'
+  get 'user_sessions/create'
   get 'users/new'
   get 'users/create'
   root to: 'static_pages#top'
