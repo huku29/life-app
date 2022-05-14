@@ -7,13 +7,13 @@
   </div>
   <div class="form-group">
     <%= f.label :password%>
-    <%= f.text_field :passsword%>
+    <%= f.password_field :password%>
   </div>
   <div class="action">
-  <%= f.submit %>
+    <%= f.submit %>
   </div>
-  <%= link_to '未登録の方はこちら',new_user_path %>
-  <% end %>
+<% end %>
+<%= link_to '未登録の方はこちら',new_user_path %>
 
 
 
