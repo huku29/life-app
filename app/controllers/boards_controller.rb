@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create index]
+  skip_before_action :require_login, only: %i[new create]
   def new
     @board = Board.new
   end
