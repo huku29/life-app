@@ -5,6 +5,7 @@
       <div class="mypage">
         <%= link_to "マイページ", board_path(current_user)%>
         <%= link_to "投稿ページ", new_board_path %>
+        <%= link_to "ログアウト", logout_path, method: :delete %>
       </div>
     </li>
   </nav>
