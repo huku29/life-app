@@ -1,6 +1,11 @@
 <header>
   <nav>
     <li>ロゴ</li>
-    <li>マイページ</li>
+    <li>
+      <div class="mypage">
+        <%= link_to "マイページ", board_path(current_user)%>
+        <%= link_to "投稿ページ", new_board_path %>
+      </div>
+    </li>
   </nav>
 </header>
