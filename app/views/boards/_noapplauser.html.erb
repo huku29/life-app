@@ -1,6 +1,6 @@
 <div class='mr10 float-right'>
   <%= link_to applauser_path(current_user.applausers.find_by(board_id:board.id)), id: "js-applauser-button-for-board-#{board.id}",method: :delete, remote: true do %>
   <%# 黒い星マーク %>
-    <i class="fas fa-star"></i>
+    <i class="fa-solid fa-hands-clapping"></i>
   <% end %>
 </div>
