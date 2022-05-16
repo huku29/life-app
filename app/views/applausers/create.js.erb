@@ -1,1 +1,2 @@
-$("#js-applauser-button-for-board-<%= @board.id %>").replaceWith("<%= j(render('boards/noapplauser', board: @board)) %>");
+
+document.getElementById("js-applauser-button-for-board-<%= @board.id %>").innerHTML ="<%= j(render('boards/noapplauser', board: @board)) %>";
