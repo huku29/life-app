@@ -10,7 +10,13 @@
   <td><%= board.user.name%></td>
   <td><%= board.title%></td>
   <td><%= l board.user.created_at%></td>
-  <td></td>
+  <td>
+    <% if current_user.own?(board)%>
+      <%= render "crud_menus", board: board%>
+    <% else %>
+      <%= render "applauser_button", board: board%>
+    <% end %>
+  </td>
 </tr>
 </table>
 </div>
