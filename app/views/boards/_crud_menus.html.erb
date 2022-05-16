@@ -3,7 +3,7 @@
   <% if current_user.own?(board) %>
     <li class="list-inline-item">
       <%= link_to edit_board_path(board) ,id: "button-edit-#{board.id}" do %>
-        <%= icon 'fa', 'pen' %>
+        <%# <%= icon 'fa', 'pen' %> %>
       <% end %>
     </li>
   <% end %>
