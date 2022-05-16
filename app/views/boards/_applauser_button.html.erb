@@ -1,0 +1,7 @@
+<% if current_user.applauser?(board)  %>
+  <%# bookmarkしていれば、ブックマークしているボタンのとこへ %>
+  <%= render 'noapplauser', board: board %>
+<% else  %>
+  <%# bookmarkしていなければ、ブックマークしていないボタンのとこへ %>
+  <%= render 'applauser', board: board %>
+<% end %>
