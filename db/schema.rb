@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_13_075612) do
+ActiveRecord::Schema.define(version: 2022_05_14_132313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applausers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "board_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_applausers_on_board_id"
+    t.index ["user_id", "board_id"], name: "index_applausers_on_user_id_and_board_id", unique: true
+    t.index ["user_id"], name: "index_applausers_on_user_id"
+  end
 
   create_table "boards", force: :cascade do |t|
     t.bigint "user_id"
@@ -34,5 +44,7 @@ ActiveRecord::Schema.define(version: 2022_05_13_075612) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "applausers", "boards"
+  add_foreign_key "applausers", "users"
   add_foreign_key "boards", "users"
 end

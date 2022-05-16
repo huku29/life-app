@@ -1,0 +1,2 @@
+module ApplausersHelper
+end
