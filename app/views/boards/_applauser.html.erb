@@ -1,6 +1,6 @@
 <div class='applaluserbutton'>
   <%# 拍手を押して拍手済みにするページ %>
-  <%= link_to applauserss_path(board_id: board.id), id: "js-bookmark-button-for-board-#{board.id}", method: :post, remote: true do %>
+  <%= link_to applausers_path(board_id: board.id), id: "js-bookmark-button-for-board-#{board.id}", method: :post, remote: true do %>
     <i class="far fa-star"></i>
   <% end %>
 </div>
