@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+10.times do 
+  User.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      password: '12345678',
+      password_confirmation: '12345678'
+  )
+ end
+ 
+ #掲示板ダミーを50個作成する
+ 
+ 10.times do |index| #boardダミーの作成。
+  Board.create!(
+      user: User.offset(rand(User.count)).first, 
+      title: Faker::Music::RockBand.name, 
+      incident: Faker::FunnyName.name
+  )
+ end
