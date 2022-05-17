@@ -2,5 +2,6 @@
   <%# 拍手を押して拍手済みにするページ %>
   <%= link_to  applausers_path(board_id: board.id), id: "js-applauser-button-for-board-#{board.id}", method: :post, remote: true do %>
     <i class="fa-solid fa-hands-holding"></i>
+    <%= @applauser_count %>
   <% end %>
 </div>
