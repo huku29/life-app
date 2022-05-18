@@ -1,14 +1,16 @@
-<%= form_with model:board, local:true do |f|%>
-  <div class="form-group">
-  <%= f.label :title%>
-  <%= f.text_field :title%>
-  </div>
-  <div class="form-group">
-  <%= f.label :incident%>
-  <%= f.text_field :incident%>
-  </div>
-  <div class="form-action">
-  <%= f.submit %>
-  </div>
-<% end %>
+  
+  <%= form_with model:board, local:true do |f|%>
+    <div class="form-group mb-4">
+      <%= f.label :title, class:"block mb-1"%>
+      <%= f.text_field :title, class: "py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"%>
+    </div>
+    <div class="form-group mb-4">
+    <%= f.label :incident, class:"block mb-1"%>
+    <%= f.text_field :incident, class: "py-10 px-7 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full", rows: 10%>
+    </div>
+    <div class="form-action mb-6">
+    <%= f.submit'投稿する', class:"w-full inline-flex items-center justify-center px-4 py-2 bg-yellow-500 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-yellow-400 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition cursor-pointer"%>
+    </div>
+  <% end %>
+  
   

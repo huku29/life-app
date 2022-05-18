@@ -1,4 +1,6 @@
-<div class="container">
-  <h1>新規投稿ページ</h1>
+<div class="w-screen min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0" style="background-image: url(<%= asset_path('bg-top.jpg') %>)">
+  <div class="w-full sm:max-w-md mb-40" >
+  <h2 class="mb-12 text-center text-5xl font-extrabold">投稿ページ</h2>
   <%= render 'form', { board:@board } %>
+  </div>
 </div>
