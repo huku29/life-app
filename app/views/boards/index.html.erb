@@ -1,8 +1,4 @@
-<h1>みんなの投稿一覧</h1>
-<!-- 検索フォーム -->
-<form></form>
-
-<%# ＜投稿一覧> %>
-<div class="column">
+<div class=" min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center" style="background-image: url(<%= asset_path('bg-top.jpg') %>)">
+  <h1 class="text-4xl my-8">みんなの投稿一覧</h1>
   <%= render @boards %>
 </div>
