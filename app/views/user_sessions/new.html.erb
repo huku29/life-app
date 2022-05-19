@@ -3,11 +3,11 @@
   <h2 class="mb-12 text-center text-5xl font-extrabold">ログイン</h2>
   <%= form_with url: login_path, local: true do |f| %>
     <div class="form-group mb-4 ">
-      <%= f.label :email, class:"block mb-1" %> 
+      <%= f.label :email, User.human_attribute_name(:email), class:"block mb-1" %> 
       <%= f.text_field :email, class:"py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" %>
     </div>
     <div class="form-group mb-4">
-      <%= f.label :password, class:"block mb-1" %>
+      <%= f.label :password, User.human_attribute_name(:password), class:"block mb-1" %>
       <%= f.password_field :password, class:"py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"%>
     </div>
     <div class="action mt-6">
