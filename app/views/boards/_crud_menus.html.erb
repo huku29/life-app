@@ -1,10 +1,13 @@
-<ul class='crud-menu-btn list-inline float-right'>
-<%# boardパーシャルのboardがここのboardの情報になる %>
-  <% if current_user.own?(board) %>
+<ul class='crud-menu-btn list-inline float-right flex'>
     <li class="list-inline-item">
-      <%= link_to edit_board_path(board) ,id: "button-edit-#{board.id}" do %>
-        <%# <%= icon 'fa', 'pen' %> %>
-      <% end %>
+      <%= link_to edit_board_path(board) do %>
+      <i class="fa-solid fa-file-pen"></i>
     </li>
-  <% end %>
+    <% end %>
+    <li class="list-inline-item">
+      <%= link_to board_path(board), data: { confirm: 'Are you sure?' },  method: :delete do %>
+      <i class="fa-solid fa-eraser"></i>
+    </li>
+    <% end %>
 </ul>
+
