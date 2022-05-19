@@ -1,22 +1,28 @@
-<div class="column">
-<table>
-<tr>
-  <th>名前</th>
-  <th>タイトル</th>
-  <th>作成日時</th>
-  <th>拍手ボタン</th>
-</tr>
-<tr>
-  <td><%= board.user.name%></td>
-  <td><%= board.title%></td>
-  <td><%= l board.user.created_at%></td>
-  <td>
-    <% if current_user.own?(board)%>
-      <%= render "crud_menus", board: board%>
-    <% else %>
-      <%= render "applauser_button", board: board%>
-    <% end %>
-  </td>
-</tr>
+<table class="border-collapse border border-slate-400 table-fixed w-4/5">
+  <thead>
+    <tr>
+      <th class="border border-slate-300 ">名前</th>
+      <th class="border border-slate-300">タイトル</th>
+      <th class="border border-slate-300">作成日時</th>
+      <% if current_user.own?(board)%>
+        <th class="border border-slate-300">編集・削除ボタン</th>
+      <% else %>
+        <th class="border border-slate-300">拍手ボタン</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border border-slate-300 p-2"><%= board.user.name%></td>
+      <td class="border border-slate-300 p-2"><%= link_to board.title,board_path(board) %></td>
+      <td class="border border-slate-300 p-2"><%= l board.user.created_at%></td>
+      <td class="border border-slate-300 p-2">
+        <% if current_user.own?(board)%>
+          <%= render "crud_menus", board: board%>
+        <% else %>
+          <%= render "applauser_button", board: board%>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
 </table>
-</div>
