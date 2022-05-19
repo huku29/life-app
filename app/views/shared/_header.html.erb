@@ -1,12 +1,14 @@
 <header>
-  <nav>
-    <li>ロゴ</li>
-    <li>
-      <div class="mypage">
-        <%= link_to "マイページ", board_path(current_user)%>
-        <%= link_to "投稿ページ", new_board_path %>
-        <%= link_to "ログアウト", logout_path, method: :delete %>
+  <!-- Navbar -->
+  <nav class="py-8 bg-green-50">
+    <div class="md:container px-4 md:px-0 mx-auto flex justify-between w-full">
+      <p><%= link_to "人生観が変わった話", root_path %></p>
+      <div class="flex space-x-4 cursor-pointer">
+        <p><%= link_to "マイページ", board_path(current_user) %></p>
+        <p><%= link_to "みんなの投稿", boards_path %></p>
+        <p><%= link_to "投稿ページ", new_board_path %></p>
+        <p><%= link_to "ログアウト",logout_path, method: :delete %></p>
       </div>
-    </li>
+    </div>
   </nav>
 </header>
