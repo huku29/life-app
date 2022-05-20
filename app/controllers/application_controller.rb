@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   def not_authenticated
     redirect_to login_path
-    flash[:warning] = 'ログインしてください'
+    flash[:alart] = t('defaults.message.login_checked')
   end
 end
