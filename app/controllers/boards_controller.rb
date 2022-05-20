@@ -15,6 +15,14 @@ class BoardsController < ApplicationController
     end
   end
 
+  def mypage
+    @boards = Board.where(user_id: current_user).order(created_at: :desc).page(params[:page])
+    if @boards.empty?
+      redirect_to new_board_path, flash: {alart: '投稿していません'} 
+    end
+  end
+  
+
 
   def edit
     @board = current_user.boards.find(params[:id])

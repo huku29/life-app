@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'users/create'
   root to: 'static_pages#top'
   get 'static_pages/top'
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create] do
+    get 'mypage', to: 'boards#mypage'
+  end
+  
   resources :boards do
     collection do
       get 'applausers'
