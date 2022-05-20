@@ -1,24 +1,13 @@
 
-
-
-
-
-
-
-
-<div class=" w-screen min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0" style="background-image: url(<%= asset_path('bg-top.jpg') %>)">
-  <div class ="head sm:max-w-md ">
-  <h1 class=" text-2xl font-extrabold"><%= @board.user.name%>さんの人生観が変わった話</h1>
+<div class=" h-screen bg-green-100 py-14 style=" style= "background-image: url(<%= asset_path('bg-top.jpg') %>)">
+    <h2 class="text-4xl tracking-widest font-bold text-center mt-40"><%= @board.user.name%>さんの人生観が変わった話</h2>
+    <div class ="text-2xl tracking-widest font-bold text-center mt-24">
+    <h3 class="block mb-1">タイトル</h3>
+    <span class=" block w-full"><%= @board.title%></span>
   </div>
-  <div class ="title block">
-  <h3 class="block mb-1">タイトル</h3>
-  <span class="py-2 px-3 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"><%= @board.title%></span>
-  </div>
-  <div class="experience  block mb-4">
-  <h3 class="block mb-1">人生観が変わった出来事</h3>
+  <div class="text-2xl tracking-widest font-bold text-center mt-10">
+    <h3 class="block mb-1">人生観が変わった出来事</h3>
   <span class="w-full"><%= @board.incident%></span>
-  </div>
-  <div class="applause  block mb-4">
-  <h3>イメージ画像 回数表示</h3>
-  </div>
+    </div>
+
 </div>
