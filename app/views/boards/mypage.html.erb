@@ -1,0 +1,8 @@
+<div class=" min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center" style="background-image: url(<%= asset_path('bg-top.jpg') %>)">
+  
+  <h1 class="text-4xl my-8">自分の投稿一覧</h1>
+  <%= render @boards %>
+<div class="mt-11">
+<%= paginate @boards %>
+</div>
+</div>
