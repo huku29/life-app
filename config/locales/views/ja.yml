@@ -2,3 +2,15 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
+  defaults:
+    login: "ログインしました"
+    logout: "ログアウトしました"
+    message:
+      updated: "%{item}を編集しました"
+      deleted: "%{item}を削除しました"
+      new: "投稿しました"
+      login_failed: "ログインに失敗しました"
+      login_checked: "ログインしてください"
+      edit_failed: "編集に失敗しました"
+      register_success: "登録完了しました"
+      register_failed: "登録失敗しました"

@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      redirect_to login_path, notice: t('defaults.message.register_success')
     else
+      flash.now[:alert] = t('defaults.message.register_failed')
       render action: :new
     end
   end

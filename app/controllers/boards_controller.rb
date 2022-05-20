@@ -11,7 +11,7 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.new(board_params)
     if @board.save
-      redirect_to 
+      redirect_to @board, notice: t('defaults.message.new')
     end
   end
 
@@ -23,8 +23,9 @@ class BoardsController < ApplicationController
   def update
     @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
-      redirect_to @board
+      redirect_to @board, notice: t('defaults.message.updated', item: Board.model_name.human)
     else
+      flash.now[:alart] = t('defaults.message.edit_failed')
       render :edit
     end
   end
@@ -37,7 +38,7 @@ class BoardsController < ApplicationController
   def destroy
     @board = current_user.boards.find(params[:id])
     @board.destroy
-    redirect_to boards_path
+    redirect_to boards_path, flash: {alart: t('defaults.message.deleted', item: Board.model_name.human) } 
   end
 
   private

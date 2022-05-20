@@ -1,0 +1,11 @@
+<% flash.each do |message_type, message| %>
+  <% if message_type == 'notice' %>
+			<div class="w-full text-green-700 bg-green-200 p-4">
+          <p><%= message %></p>
+      </div>
+	<% else %>
+			<div class="w-full text-yellow-700 bg-yellow-200 p-4">
+				<p><%= message %></p>
+			</div>
+	<% end %>
+<% end %>
