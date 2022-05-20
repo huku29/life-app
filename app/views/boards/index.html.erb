@@ -3,6 +3,7 @@
 <div class=" min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center" style="background-image: url(<%= asset_path('bg-top.jpg') %>)">
   
   <h1 class="text-4xl my-8">みんなの投稿一覧</h1>
+  <h3 class="text-2xl my-8">タイトルをクリックするとみんなの体験談が見れます</h3>
   <%= render @boards %>
 <div class="mt-11">
 <%= paginate @boards %>
